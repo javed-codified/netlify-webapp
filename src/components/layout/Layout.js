@@ -7,22 +7,22 @@ import { Layout } from "antd";
 // const {Content} = Layout;
 import SideMenu from "./SideMenu";
 import Shopping from "../Shopping";
-const { Content,Header } = Layout;
+const { Content, Header } = Layout;
 
-const Layouts  = (props) => {
+const Layouts = (props) => {
   return (
     <Layout>
       <Router>
         <NavBar />
         <CarouselSection />
         <Fragment>
-          <Content style={{ padding: "0 20px" }}>
+          <Content>
             <Layout style={{ padding: "24px 0", background: "#fff" }}>
               <SideMenu />
 
-               <Content style={{ padding: "0 24px", minHeight: 280 }}>
+              <Content style={{ padding: "0 24px", minHeight: 280 }}>
                 <Route path="/category/:id" component={Shopping} />
-               </Content>
+              </Content>
             </Layout>
           </Content>
 
