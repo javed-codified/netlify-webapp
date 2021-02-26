@@ -1,17 +1,21 @@
 import React from "react";
-import { Menu } from 'antd';
-import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
-
-  const { SubMenu } = Menu;
+import { Menu } from "antd";
+import { Navbar,Nav,NavDropdown,Form,Button,FormControl,Row,Col } from "react-bootstrap";
+import {
+  MailOutlined,
+  AppstoreOutlined,
+  SettingOutlined,
+} from "@ant-design/icons";
+const { SubMenu } = Menu;
 
 const NavBar = () => {
   return (
     <div>
-      <Menu mode="horizontal">
+      {/* <Menu mode="horizontal">
         <Menu.Item key="mail" icon={<MailOutlined />}>
           Navigation One
         </Menu.Item>
-        <Menu.Item key="app" disabled icon={<AppstoreOutlined />}>
+        <Menu.Item key="app" icon={<AppstoreOutlined />}>
           Navigation Two
         </Menu.Item>
         <SubMenu key="SubMenu" icon={<SettingOutlined />} title="Navigation Three - Submenu">
@@ -29,8 +33,9 @@ const NavBar = () => {
             Navigation Four - Link
           </a>
         </Menu.Item>
-      </Menu>
-      {/* <Navbar bg="light" fixed="top" expand="lg">
+      </Menu> */}
+
+      <Navbar bg="light" fixed="top" expand="lg">
         <Navbar.Brand href="#home">Droix</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -38,10 +43,10 @@ const NavBar = () => {
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#link">Android Devices</Nav.Link>
             <NavDropdown title="MoreItems" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Mini PC & IT</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Gaming
+              <NavDropdown.Item href="#action/3.1">
+                Mini PC & IT
               </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">Gaming</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">SmartHome</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">
@@ -49,15 +54,20 @@ const NavBar = () => {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
+
           <Form inline>
             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
             <Button variant="outline-success">Search</Button>
           </Form>
         </Navbar.Collapse>
-        <Button className="btn-primary m-1" >Login</Button>
-        <Button className="btn-primary m-1" >SignUp</Button>
-      </Navbar> */}
-    </div>
+        <Button className="btn-primary m-1">Login</Button>
+        <Button className="btn-primary m-1">SignUp</Button>
+      </Navbar>
+      
+      </div>
+
+
+   
   );
 };
 
