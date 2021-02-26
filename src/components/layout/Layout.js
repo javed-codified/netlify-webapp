@@ -1,31 +1,38 @@
 import React, { Fragment } from "react";
 import Footer from "../footer/Footer";
-import NavBar from "../navbar/Navbar";
+import NavBar from "../navbar/NavBar";
 import CarouselSection from "../carousel/Carousel";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Layout } from "antd";
 // const {Content} = Layout;
 import SideMenu from "./SideMenu";
 import Shopping from "../Shopping";
-const { Content,Header } = Layout;
+import Categories from "../categorySection/Categories";
+const { Content, Header } = Layout;
 
-const Layouts  = (props) => {
+const Layouts = (props) => {
   return (
     <Layout>
       <Router>
         <NavBar />
+        <Content style={{marginTop:'63px'}} >
         <CarouselSection />
+        </Content>
         <Fragment>
           <Content style={{ padding: "0 20px" }}>
             <Layout style={{ padding: "24px 0", background: "#fff" }}>
               <SideMenu />
 
-               <Content style={{ padding: "0 24px", minHeight: 280 }}>
+              <Content style={{ padding: "0 24px", minHeight: 280 }}>
                 <Route path="/category/:id" component={Shopping} />
-               </Content>
+              </Content>
             </Layout>
           </Content>
 
+          <Content>
+            <Categories />
+          </Content>
+          
           <Footer />
         </Fragment>
       </Router>

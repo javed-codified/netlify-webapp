@@ -3,6 +3,7 @@ import { Carousel } from "react-bootstrap";
 
 const CarouselSection = () => {
   return (
+    
     <Carousel>
       <Carousel.Item>
         <img className="d-block w-100" src="1S.png" alt="First slide" />

@@ -33,7 +33,7 @@ class SideMenu extends Component {
     componentDidMount() {
             getCategories().then(response => {
 
-                this.setState({
+               this.setState({
                     categories: response.data,
                     loading: false
                 });
