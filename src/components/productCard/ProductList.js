@@ -133,7 +133,7 @@ class ProductList extends Component {
                       actions={[
                         <Button
                           type="primary"
-                          icon="plus"
+                          // icon="plus"
                           onClick={() => this.props.addToCart(item)}>
                           Add to Cart
                         </Button>,
