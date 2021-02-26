@@ -118,7 +118,7 @@ class ProductList extends Component {
         <Row>
         <Col>
             <List
-              grid={{ gutter: 16, column: 3 }}
+              grid={{ gutter: 16, column: 4 }}
               dataSource={this.state.products}
               renderItem={(item) => (
                 <List.Item>
@@ -128,6 +128,7 @@ class ProductList extends Component {
                         <img
                           alt="product"
                           src={item.images[0] ? item.images[0].src : no_image}
+                          style={{ padding: '1em' }}
                         />
                       }
                       actions={[
