@@ -40,11 +40,16 @@ const Layouts = (props) => {
     <Layout>
       <Router>
         <NavBar />
-        <CarouselSection />
+        
 
          <Fragment>
-
+           <Content>
+               <Layout style={{ background: "#fff" }}>
+                  <CarouselSection />
+              </Layout>
+           </Content>
            <Content style={{ padding: "0 20px" }}>
+           
             <Layout style={{ padding: "24px 0", background: "#fff" }}>
               <SideMenu />
 

@@ -6,7 +6,7 @@ import ProductList from '../components/productCard/ProductList';
 const Shopping = (props) => {
     return (
         <Row>
-            <Col span={6}>
+            <Col>
                 <ProductList {...props} />
             </Col>
 
