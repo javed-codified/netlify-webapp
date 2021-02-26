@@ -1,12 +1,15 @@
 import React from 'react';
-import {Row, Col} from 'antd';
-import ShoppingCart from '../components/shoppingCart/ShopingCart';
+import {Row, Col} from 'react-bootstrap';
 import ProductList from '../components/productCard/ProductList';
 
 const Shopping = (props) => {
+
+    
+
+
     return (
         <Row>
-            <Col>
+            <Col span={14}>
                 <ProductList {...props} />
             </Col>
 

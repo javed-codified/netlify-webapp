@@ -1,11 +1,8 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
-import { Row, Col } from "antd";
 
 const CarouselSection = () => {
   return (
-    <Row large>
-      <Col span={24}>
     <Carousel>
       <Carousel.Item>
         <img className="d-block w-100" src="1S.png" alt="First slide" />
@@ -33,8 +30,6 @@ const CarouselSection = () => {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
-    </Col>
-    </Row>
   );
 };
 

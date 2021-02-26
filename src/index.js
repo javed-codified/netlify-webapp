@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import 'antd/dist/antd.css';  // or 'antd/dist/antd.less'
 import * as serviceWorker from "./serviceWorker";
 import store from "./store";
 import { Provider } from "react-redux";
+import 'antd/dist/antd.css';
 
 import { loadCartProducts } from "./action";
 

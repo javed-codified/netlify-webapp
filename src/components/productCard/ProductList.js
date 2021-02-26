@@ -3,6 +3,7 @@ import { Spin, List, Card, Button, Pagination, Row, Col } from "antd";
 import { connect } from "react-redux";
 import { addToCart } from "../../action";
 import {
+  getCategories,
   getProductsByCategory,
   getCategoryById,
 } from "../../remote/woocommerce";
@@ -61,6 +62,7 @@ class ProductList extends Component {
         process.env.REACT_APP_WOOCOMMERCE_PRODUCTS_PER_PAGE
       );
     }
+    console.log(getCategories);
   }
 
   renderPrices = (item) => {
@@ -116,9 +118,10 @@ class ProductList extends Component {
           </Col>
         </Row>
         <Row>
-        <Col>
+          <Col>
             <List
               grid={{ gutter: 16, column: 4 }}
+              
               dataSource={this.state.products}
               renderItem={(item) => (
                 <List.Item>
