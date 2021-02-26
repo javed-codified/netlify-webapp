@@ -43,20 +43,8 @@ class SideMenu extends Component {
       );
     }
 
-<<<<<<< HEAD
-    componentDidMount() {
-            getCategories().then(response => {
-
-               this.setState({
-                    categories: response.data,
-                    loading: false
-                });
-
-            });
-=======
     if (!this.state.categories || this.state.categories.length === 0) {
       return <p>No categories to show</p>;
->>>>>>> 5ebebf308ad2fe9251e9fa8cad07bd9a0d4dd3c3
     }
 
     return (

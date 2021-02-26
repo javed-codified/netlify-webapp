@@ -16,6 +16,7 @@ const Layouts = (props) => {
     <Layout>
       <Router>
         <NavBar />
+        
         <Content style={{marginTop:'63px'}} >
         <CarouselSection />
         </Content>

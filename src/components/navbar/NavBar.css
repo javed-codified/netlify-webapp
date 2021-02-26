@@ -1,0 +1,8 @@
+.top-bar li,a{
+    list-style: none;
+    padding: 12px;
+}
+
+.main-menu{
+    color: bisque;
+}

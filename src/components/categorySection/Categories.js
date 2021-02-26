@@ -6,22 +6,31 @@ import {getCategories} from "../../../src/remote/woocommerce";
 
 const Categories = () => {
 
-    const [product,setProduct ] = useState()
+    const [product,setProduct ] = useState([]);
 
     useEffect(() => {
         getCategories().then(response=>{
-            setProduct(response.data)
-            console.log(response.data[1]);
+            console.log(response.data);
+            setProduct(response.data);
         })
 
-        
+
     }, [])
 
+
     return (
-        <div>
-            <h1>This is feature Brand component</h1>
-              <h2>  </h2>
-        </div>
+
+         <div>
+             {
+                 product.map((category)=>{
+                     return(
+                         <>
+                         {category.name}
+                         </>
+                     )
+                 })
+             }
+         </div>
     )
 }
 
