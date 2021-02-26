@@ -31,8 +31,6 @@ class SideMenu extends Component {
     }
 
     componentDidMount() {
-
-
             getCategories().then(response => {
 
                 this.setState({
