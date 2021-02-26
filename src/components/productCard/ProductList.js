@@ -74,9 +74,8 @@ class ProductList extends Component {
       return (
         <span>
           <span
-            style={{ color: "red", fontWeight: "bold" }}>{`${discount.toFixed(
-            0
-          )}%`}</span>{" "}
+            style={{ color: "red", fontWeight: "bold" }}
+          >{`${discount.toFixed(0)}%`}</span>{" "}
           | <strike>$ {item.regular_price}</strike> | <b>$ {item.price}</b>
         </span>
       );
@@ -121,7 +120,6 @@ class ProductList extends Component {
           <Col>
             <List
               grid={{ gutter: 16, column: 4 }}
-              
               dataSource={this.state.products}
               renderItem={(item) => (
                 <List.Item>
@@ -131,17 +129,19 @@ class ProductList extends Component {
                         <img
                           alt="product"
                           src={item.images[0] ? item.images[0].src : no_image}
-                          style={{ padding: '1em' }}
+                          style={{ padding: "1em" }}
                         />
                       }
                       actions={[
                         <Button
                           type="primary"
                           // icon="plus"
-                          onClick={() => this.props.addToCart(item)}>
+                          onClick={() => this.props.addToCart(item)}
+                        >
                           Add to Cart
                         </Button>,
-                      ]}>
+                      ]}
+                    >
                       <Meta
                         title={item.name}
                         description={this.renderPrices(item)}
@@ -159,8 +159,8 @@ class ProductList extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Products on {this.state.category.name}</h1>
+      <div style={{ paddingTop: "25px" }}>
+        <h3>Products on {this.state.category.name}</h3>
         {this.renderProducts()}
       </div>
     );

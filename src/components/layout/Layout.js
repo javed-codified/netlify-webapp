@@ -8,6 +8,7 @@ import { Layout } from "antd";
 import SideMenu from "./SideMenu";
 import Shopping from "../Shopping";
 import Categories from "../categorySection/Categories";
+
 const { Content, Header } = Layout;
 
 const Layouts = (props) => {
@@ -19,7 +20,7 @@ const Layouts = (props) => {
         <CarouselSection />
         </Content>
         <Fragment>
-          <Content style={{ padding: "0 20px" }}>
+          <Content>
             <Layout style={{ padding: "24px 0", background: "#fff" }}>
               <SideMenu />
 
