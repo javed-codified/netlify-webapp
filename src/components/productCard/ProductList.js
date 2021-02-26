@@ -125,6 +125,7 @@ class ProductList extends Component {
                 <List.Item>
                   {item.price > 0 && (
                     <Card
+                      href=''
                       cover={
                         <img
                           alt="product"
