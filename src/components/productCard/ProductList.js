@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from "react";
+import { Link } from "react-router-dom";
 import { Spin, List, Card, Button, Pagination, Row, Col } from "antd";
 import { connect } from "react-redux";
 import { addToCart } from "../../action";
@@ -6,6 +7,7 @@ import {
   getCategories,
   getProductsByCategory,
   getCategoryById,
+  getProductById,
 } from "../../remote/woocommerce";
 import no_image from "../img/no_image.jpg";
 
@@ -21,6 +23,8 @@ class ProductList extends Component {
       loading: false,
       currentPage: 1,
       category: [],
+      product_id: null,
+      singleProduct: [],
     };
   }
 
@@ -53,6 +57,20 @@ class ProductList extends Component {
     });
   };
 
+  fetchSingleProduct = (product_id) => {
+    this.setState({
+      loading: true,
+      singleProduct: [],
+      product_id,
+    });
+
+    getProductById(product_id).then((response) => {
+      this.setState({
+        singleProduct: response.data,
+      });
+    });
+  };
+
   componentDidUpdate() {
     if (this.state.category_id !== this.props.match.params.id) {
       this.fetchCategory(this.props.match.params.id);
@@ -62,6 +80,10 @@ class ProductList extends Component {
         process.env.REACT_APP_WOOCOMMERCE_PRODUCTS_PER_PAGE
       );
     }
+    if (this.state.product_id !== this.props.match.params.id) {
+      this.fetchSingleProduct(this.props.match.params.id);
+    }
+
     console.log(getCategories);
   }
 
@@ -74,8 +96,9 @@ class ProductList extends Component {
       return (
         <span>
           <span
-            style={{ color: "red", fontWeight: "bold" }}
-          >{`${discount.toFixed(0)}%`}</span>{" "}
+            style={{ color: "red", fontWeight: "bold" }}>{`${discount.toFixed(
+            0
+          )}%`}</span>{" "}
           | <strike>$ {item.regular_price}</strike> | <b>$ {item.price}</b>
         </span>
       );
@@ -124,30 +147,30 @@ class ProductList extends Component {
               renderItem={(item) => (
                 <List.Item>
                   {item.price > 0 && (
-                    <Card
-                      href=''
-                      cover={
-                        <img
-                          alt="product"
-                          src={item.images[0] ? item.images[0].src : no_image}
-                          style={{ padding: "1em" }}
+                    <Link to={`/product/${item.id}`}>
+                      <Card
+                        cover={
+                          <img
+                            alt="product"
+                            src={item.images[0] ? item.images[0].src : no_image}
+                            style={{ padding: "1em" }}
+                          />
+                        }
+                        actions={[
+                          <Button
+                            href={`/product/${item.id}`}
+                            type="primary"
+                            // icon="plus"
+                            onClick={() => this.props.addToCart(item)}>
+                            Add to Cart
+                          </Button>,
+                        ]}>
+                        <Meta
+                          title={item.name}
+                          description={this.renderPrices(item)}
                         />
-                      }
-                      actions={[
-                        <Button
-                          type="primary"
-                          // icon="plus"
-                          onClick={() => this.props.addToCart(item)}
-                        >
-                          Add to Cart
-                        </Button>,
-                      ]}
-                    >
-                      <Meta
-                        title={item.name}
-                        description={this.renderPrices(item)}
-                      />
-                    </Card>
+                      </Card>
+                    </Link>
                   )}
                 </List.Item>
               )}

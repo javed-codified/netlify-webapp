@@ -56,6 +56,14 @@ const getCategoryById = (category_id) => {
   );
 };
 
+
+const getProductById =(product_id)=>{
+  return axios.get(
+    `${process.env.REACT_APP_WOOCOMMERCE_API_ENDPOINT}/wp-json/wc/v3/products/${product_id}`,
+    defaultHeaders
+  );
+};
+
 /**
  * Get payment method info for checkout
  * @returns {AxiosPromise<any>}
@@ -72,4 +80,5 @@ export {
   getProductsByCategory,
   getCategories,
   getCategoryById,
+  getProductById,
 };

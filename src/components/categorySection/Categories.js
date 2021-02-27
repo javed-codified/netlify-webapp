@@ -12,6 +12,7 @@ const Categories = () => {
         getCategories().then(response=>{
             console.log(response.data);
             setProduct(response.data);
+            console.log(response);
         })
 
 

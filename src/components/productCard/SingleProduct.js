@@ -1,9 +1,11 @@
-import React from 'react'
+import React,{useState} from 'react'
+import SingleProductPage from './SingleProductPage';
 
-const SingleProduct = () => {
+const SingleProduct = (props) => {
+
     return (
         <div>
-           <h1>This is single Product page</h1>
+           <SingleProductPage {...props} />
         </div>
     )
 }

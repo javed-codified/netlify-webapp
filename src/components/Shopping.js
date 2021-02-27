@@ -4,8 +4,6 @@ import ProductList from '../components/productCard/ProductList';
 
 const Shopping = (props) => {
 
-    
-
 
     return (
         <Row>
