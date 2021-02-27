@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import parse from 'html-react-parser'; 
 
 import { getProductById } from "../../remote/woocommerce";
 
@@ -22,8 +23,8 @@ const SingleProductPage = (props) => {
     <>
       <h1> {product.name} </h1>
        <h2>price =  {product.price} </h2>
-         {product.price_html}
-         {product.short_description}
+         {parse(product.price_html)}
+         {parse(product.short_description)}     
          <img
              src = {productImg}
          />
