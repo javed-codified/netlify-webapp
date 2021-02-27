@@ -38,11 +38,11 @@ const SingleProductPage = (props) => {
       </Row>
       <Row>
         <Col>
-          <Tabs defaultActiveKey="profile" id="uncontrolled-tab-example">
-            <Tab eventKey="home" title="Description">
+          <Tabs defaultActiveKey="description" id="product_tab">
+            <Tab eventKey="description" title="Description">
               <Row> {parse(String(product.description))} </Row>
             </Tab>
-            <Tab eventKey="profile" title="Additional Information">
+            <Tab eventKey="additional_information" title="Additional Information">
               {parse(String(product.short_description))}
             </Tab>
           </Tabs>
