@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import parse from "html-react-parser";
 
-import { Row, Col, Tab, Tabs, Sonnet } from "react-bootstrap";
+import { Row, Col, Tab, Tabs, Button } from "react-bootstrap";
 
 
 import { getProductById } from "../../remote/woocommerce";
@@ -34,6 +34,15 @@ const SingleProductPage = (props) => {
           <h2>price = {product.price} </h2>
           {parse(String(product.price_html))}
           {parse(String(product.short_description))}
+          <div>
+           <span style={{fontWeight:'bold'}} > Quantity: </span><input 
+             type='number'
+           />
+           </div>
+
+          <Button style={{marginTop:"12px"}} >
+            Add to Cart
+          </Button>
         </Col>
       </Row>
       <Row>
